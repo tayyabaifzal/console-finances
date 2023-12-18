@@ -92,14 +92,12 @@ var totalMonths = 0;
 
 
 
-
-
 console.log('Financial Analysis');
 console.log('------------------');
 
 
 // total months
-console.log(`Total months: ${finances.length}`);
+console.log(`Total months: ` + finances.length);
 
 
 
@@ -107,7 +105,7 @@ console.log(`Total months: ${finances.length}`);
 for (var i = 0; i < finances.length; i++) {
   totalMonths += finances[i][1];
 }
-console.log(`Total: $${totalMonths}`);
+console.log(`Total: $ ` + totalMonths);
 
 
 //reduce function
@@ -136,6 +134,6 @@ result.average = result.average.toFixed(2);
 
 
 
-console.log(`Average Change: $${result.average}`);
-console.log(`Greatest Increase in Profits/Losses: ${result.increase}`);
-console.log(`Greatest Decrease in Profits/Losses: ${result.decrease}`);
+console.log(`Average Change: $ ` + result.average);
+console.log(`Greatest Increase in Profits/Losses: `+ result.increase[0] + ` $(` + result.increase[1] + `)`);
+console.log(`Greatest Decrease in Profits/Losses: `+ result.decrease[0] + ` $(` + result.decrease[1] + `)`);
