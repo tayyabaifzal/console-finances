@@ -135,5 +135,5 @@ result.average = result.average.toFixed(2);
 
 
 console.log(`Average Change: $ ` + result.average);
-console.log(`Greatest Increase in Profits/Losses: `+ result.increase[0] + ` $(` + result.increase[1] + `)`);
-console.log(`Greatest Decrease in Profits/Losses: `+ result.decrease[0] + ` $(` + result.decrease[1] + `)`);
+console.log(`Greatest Increase in Profits/Losses: ` + result.increase[0] + ` $(` + result.increase[1] + `)`);
+console.log(`Greatest Decrease in Profits/Losses: ` + result.decrease[0] + ` $(` + result.decrease[1] + `)`);
