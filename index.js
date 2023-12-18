@@ -86,3 +86,56 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+var totalMonths = 0;
+
+
+
+
+
+console.log('Financial Analysis');
+console.log('------------------');
+
+
+// total months
+console.log(`Total months: ${finances.length}`);
+
+
+
+// total amount
+for (var i = 0; i < finances.length; i++) {
+  totalMonths += finances[i][1];
+}
+console.log(`Total: $${totalMonths}`);
+
+
+//reduce function
+
+var result = finances.reduce((accumulate, currentValue, i) => {
+  var finances = (i > 1) ? accumulate : { total: accumulate[1], average: accumulate[1], sumChange: 0, lastMonth: accumulate[1], increase: accumulate, decrease: accumulate },
+    change = currentValue[1] - finances.lastMonth
+
+  //average change 
+  finances.total += currentValue[1];
+  finances.sumChange += change;
+  finances.lastMonth = currentValue[1];
+  finances.average = finances.sumChange / i;
+
+  //increase profit/loss 
+  finances.increase = (finances.increase[1] > change) ? finances.increase : [currentValue[0], change];
+
+  //decrease profit/loss 
+  finances.decrease = (finances.decrease[1] < change) ? finances.decrease : [currentValue[0], change];
+
+  return finances;
+})
+
+// to round off the value to average charge
+result.average = result.average.toFixed(2);
+
+
+
+console.log(`Average Change: $${result.average}`);
+console.log(`Greatest Increase in Profits/Losses: ${result.increase}`);
+console.log(`Greatest Decrease in Profits/Losses: ${result.decrease}`);
