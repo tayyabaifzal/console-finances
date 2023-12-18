@@ -7,7 +7,7 @@ This project is designed to calculate the statistical data. JavaScript was used 
 ## Application Link
 The webpage can ben assessed through following link:
 
-?????????
+https://tayyabaifzal.github.io/console-finances/
 
 
 ![Alt text](/assets/images/1.png)
